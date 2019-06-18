@@ -36,14 +36,20 @@ class Route {
     let blocks = Number(endingStreet) - Number(startingStreet);
     return blocks >0 ? blocks : (blocks * -1);
   }
-  
+
   blocksTravelled() {
-    let horizontalBlocks = getEastWestBlocks(this.beginningLocation.horizontal, this.endingLocation.horizontal);
-    let verticalBlocks = getNorthSouthBlocks(this.beginningLocation.vertical, this.endingLocation.vertical);
+    let horizontalBlocks = this.getEastWestBlocks(this.beginningLocation.horizontal, this.endingLocation.horizontal);
+    let verticalBlocks = this.getNorthSouthBlocks(this.beginningLocation.vertical, this.endingLocation.vertical);
     return (horizontalBlocks + verticalBlocks);
   }
 
-  estimatedTime() {
+  estimatedTime(isPeakHour) {
+    let blocks = this.blocksTravelled();
+    if (isPeakHour) {
+      return blocks / 2;
+    } else {
+      return blocks / 3;
+    }
 
   }
 }
