@@ -18,6 +18,16 @@ class Route {
     this.endingLocation = endingLocation;
   }
 
+  const estWest = [
+    '1st Avenue',
+    '2nd Avenue',
+    '3rd Avenue',
+    'Lexington Avenue',
+    'Park',
+    'Madison Avenue',
+    '5th Avenue'
+  ];
+
   blocksTravelled() {
 
   }
