@@ -18,7 +18,7 @@ class Route {
     this.endingLocation = endingLocation;
   }
 
-  const estWest = [
+  static eastWest = [
     '1st Avenue',
     '2nd Avenue',
     '3rd Avenue',
